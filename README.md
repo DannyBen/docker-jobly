@@ -1,7 +1,7 @@
 Jobly Docker Image
 ==================================================
 
-This is the official Docker image for [Jobly][1].
+This is the official docker image for [Jobly][1].
 
 - [View on DockerHub][2]
 - [View on GitHub][3]
