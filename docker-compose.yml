@@ -17,13 +17,12 @@ services:
   web:
     <<: *default
     ports: ["3000:3000"]
-    command: jobly server
+    command: server
 
   worker:
     <<: *default
-    command: jobly worker
+    command: worker
 
   jobly:
     <<: *default
     depends_on: [web]
-    entrypoint: jobly
