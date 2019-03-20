@@ -1,4 +1,4 @@
 FROM dannyben/alpine-ruby
-RUN gem install jobly -v 0.2.3
+RUN gem install jobly -v 0.2.4
 WORKDIR /app
 ENTRYPOINT ["jobly"]
