@@ -1,7 +1,7 @@
 Jobly Docker Image
 ==================================================
 
-![Version](https://img.shields.io/badge/version-0.5.0-blue.svg)
+![Version](https://img.shields.io/badge/version-0.5.6-blue.svg)
 
 This is the official docker image for [Jobly][1].
 
