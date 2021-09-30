@@ -1,0 +1,31 @@
+require 'jobly'
+title   "Jobly Docker Toolbelt"
+
+command :docker
+
+help   "Build the docker images"
+action :build, :b do
+  system "docker build -t dannyben/jobly ."
+  system "docker tag dannyben/jobly dannyben/jobly:#{Jobly::VERSION}"
+  system "docker images |grep jobly"
+end
+
+help   "Smoke test the docker image"
+action :test, :t do
+  jobly_version = `docker run --rm dannyben/jobly --version`.chomp
+  if jobly_version != Jobly::VERSION
+    puts "FAIL: docker jobly version is #{jobly_version}, expected #{Jobly::VERSION}"
+    exit 1
+  else
+    puts "PASS: docker jobly version is #{jobly_version}"
+  end
+end
+
+help   "Push the docker images to Docker Hub"
+action :push, :p do
+  system "docker push dannyben/jobly"
+  system "docker push dannyben/jobly:#{Jobly::VERSION}"
+end
+
+endcommand
+
